@@ -1,1 +1,77 @@
+{% load staticfiles %}
+<!--DOCTYPE html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<!--MathJax-->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+	<!---->
+	<!--req Bootstrap-->
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <!---->
 
+	<title>{% block head_title %} MathCat | {% endblock head_title %}</title>
+	<!----><link rel="stylesheet" href='{% static "css/base.css" %}' />
+
+	<!--for graphics-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  	<!---->
+	<style>{% block style %}{% endblock style %}</style>
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
+</head>
+<body>
+
+
+   
+  	<div class="container-fliud sticky-top mb-3 px-0">
+	  	<nav class="navbar navbar-expand-lg navbar-dark " style="background-color: #83b1c8;">
+	  				<a href="/" class="navbar-brand mb-0 h1">PARAMONOFF  </a>
+	  			<div class="container">
+	  				<ul class="navbar-nav">
+	  					<div><a class="nav-link" href="/">Главная</a></div>
+	  					<div><a class="nav-link" href="#">О приложении</a></div>
+	  					<div><a class="nav-link" href="#">Обратная связь</a></div>
+	  					<div><a class="nav-link" href="#">Образцы таблиц для анализа</a></div>			
+	  				</ul>
+	  			</div>  		
+  		</nav>
+  	</div>
+  	<br>
+{% include "messages_display.html" %}
+
+<div class="container p-0 ml-5" >
+		{% block content %}
+
+
+		{% endblock content %}
+
+		{% block graph %}
+		{% endblock graph %}
+	</div>
+
+<div class="container-fliud sticky-bottom">
+      <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #83b1c8;">
+          <a href="#" class="navbar-brand mb-0 h1">  </a>
+          <div>
+            <ul class="navbar-nav">
+            <div class=" mt-1"><h1 ></h1></div>
+            </ul>
+          </div>      
+      </nav>
+    </div>
+
+	<!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <!----> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script><script type="text/javascript">{% block script %}{% endblock %}</script>
+    <!--style="background-color: #83b1c8;"-->
+
+</body>
+</html>
